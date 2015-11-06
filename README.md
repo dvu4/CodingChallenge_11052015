@@ -1,4 +1,4 @@
-Insight Data Engineering - Coding Challenge
+Insight Data Engineering - Coding Challenge - Duc Vu
 ===========================================================
 
 For this coding challenge, you will develop tools that could help analyze the community of Twitter users.  For simplicity, the features we will build are primitive, but you could easily build more complicated features on top of these.   
@@ -388,5 +388,5 @@ Generally, we will evaluate your coding challenge with a testing suite that prov
 * *How long will it take for me to hear back from you about my submission?*  
 We receive hundreds of submissions and try to evaluate them all in a timely manner.  We try to get back to all applicants within two or three weeks of submission, but if you have a specific deadline that requires expedited review, you may email us at cc@insightdataengineering.com.  
 
-# Insight Data Engineering - Coding Challenge - Duc Vu
+
 
