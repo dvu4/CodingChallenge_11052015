@@ -2,7 +2,7 @@
 
 import sys
 import json
-
+import string
 
 #get file path from command line argument in python
 input_file = open(sys.argv[1],"r+")
@@ -26,8 +26,10 @@ for line in data:
     if  line.get("text") is not None:
         dic['time'] = line.get("created_at")
 
+        # remove non-unicode, replace the escape,newline and tab characters by space
         dic['content'] = filter(None,removeNonAscii(line.get("text")))
-
+        dic['content'] =  str(dic['content']).translate(string.maketrans("\n\t\r", "   "))
+        
         if len(line.get("text")) > len(removeNonAscii(line.get("text"))):
             unicode_count +=1
         result.append(dic)

@@ -2,8 +2,9 @@
 
 import sys
 import json
-from datetime import datetime
+import string
 
+from datetime import datetime
 from collections import Counter
 import operator
 
@@ -14,7 +15,7 @@ output_file=open(sys.argv[2],"w")
 
 def removeNonAscii(s): 
     if s is not None:
-        return "".join(filter(lambda x: ord(x)>31 & ord(x)<128 , s)) 
+        return "".join(filter(lambda x: ord(x)<128 , s)) 
 
 def extract_hashtags(s):
     return [word for word in s.split() if word[0] == "#" ]   
@@ -35,7 +36,10 @@ for line in data:
     if  line.get("text") is not None:
         dic['time'] = line.get("created_at")
         
-        list_hashtags = extract_hashtags(filter(None,removeNonAscii(line.get("text"))))
+        # remove non-unicode, replace the escape,newline and tab characters by space
+        content =  str(filter(None,removeNonAscii(line.get("text")))).translate(string.maketrans("\n\t\r", "   "))
+        list_hashtags = extract_hashtags(content)
+
         
         dic1 = {}
         for hashtag in list_hashtags:
