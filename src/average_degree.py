@@ -1,4 +1,4 @@
-# example of program that calculates the average degree of hashtags
+# program that calculates the average degree of hashtags
 
 import sys
 import json
@@ -42,7 +42,7 @@ for line in data:
             dic1[hashtag] = len(list_hashtags) -1
         dic['content'] = dic1
     result.append(dic)
-#print result
+
  
 
 for i in range(len(result)):
@@ -59,7 +59,7 @@ for i in range(len(result)):
         avg_degree = 1.0*sum(hashtag_graph.values())/len(hashtag_graph)
     else:
         avg_degree = 0
-    print 'average degree is: %.2f \n' %avg_degree
+    #print 'average degree is: %.2f \n' %avg_degree
     output_file.write('%.2f \n' %avg_degree)
 
                       

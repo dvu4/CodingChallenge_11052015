@@ -6,12 +6,7 @@ import json
 
 #get file path from command line argument in python
 input_file = open(sys.argv[1],"r+")
-
 output_file = open(sys.argv[2],"w")
-
-#input_file = open("../data-gen/tweets.txt","r")
-#input_file = open("../tweet_input/tweets.txt","r")
-#input_file = open("../tweet_input/tweets_1.txt","r")
 
 
 def removeNonAscii(s): 
@@ -37,7 +32,7 @@ for line in data:
             unicode_count +=1
         result.append(dic)
 
-print unicode_count ,"tweets contained unicode."
+#print unicode_count ,"tweets contained unicode."
 
 
 # extracting the information of text" field and  "created_at" field, 
