@@ -17,9 +17,13 @@ def removeNonAscii(s):
     if s is not None:
         return "".join(filter(lambda x: ord(x)<128 , s)) 
 
-def extract_hashtags(s):
-    return [word for word in s.split() if word[0] == "#" ]   
+#def extract_hashtags(s):
+#    return [word for word in s.split() if word[0] == "#" ]   
 
+def extract_hashtags(s):
+    htag = [word for word in s.split() if word[0] == "#" ]   
+    htag = map(lambda x: x.lower(), htag)
+    return list(set(htag))
 
 def time_diff(time1,time2):
     d1 = datetime.strptime(time1, "%a %b %d %H:%M:%S +0000 %Y")
